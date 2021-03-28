@@ -32,7 +32,21 @@ namespace BUFFET.Controllers
         {
             return View();
         }
-
+    
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+        
+        public IActionResult RecSenha()
+        {
+            return View();
+        }
+        
+        public IActionResult TermosUso()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

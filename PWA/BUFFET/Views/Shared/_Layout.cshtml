@@ -9,28 +9,34 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-secondary border-bottom box-shadow mb-3">
         <img src="https://www.piktotal.com.br/wp-content/themes/piktotal/assets/img/titulo-buffet.png" width="80" height="30"  alt="logo" class="logo">
                     
         <div class="container">
                       
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BUFFET</a>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>BUFFET</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div class="navbar-collapse navbar-dark collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav navbar-dark  flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="btn btn-secondary nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><b>Home</b></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                    
+                    <li class=" nav-item">
+                        <a class="btn btn-secondary nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><b>Login</b></a> 
+                        
                     </li>
                 </ul>
+                    
+                <ul class="navbar-nav navbar-dark  d-flex" >
+                    <li class="nav-item">
+                        <a class="btn btn-secondary nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Privacy</b></a>
+                    </li>
+                </ul>
+                
             </div>
         </div>
     </nav>
