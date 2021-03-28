@@ -42,3 +42,12 @@ C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\Cadastro.cshtml.g.cs
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\RecSenha.cshtml.g.cs
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\TermosUso.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Index.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\_Layout.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Ajuda.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Privacy.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\TermosUso.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Agenda.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Eventos.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Financeiro.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\MinhaConta.cshtml.g.cs

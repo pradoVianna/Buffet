@@ -12,7 +12,7 @@
           </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Log in</h1>
-            <form action="#!">
+            <form asp-area="" asp-controller="Interno" asp-action="Index" method="post">
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="seunome@exemplo.com">
@@ -21,7 +21,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Digite sua senha..">
               </div>
-              <input name="login" id="login" class="btn-block login-btn btn btn-secondary" type="button" value="Login">
+              <input name="login" id="login" class="btn-block login-btn btn btn-secondary" type="submit" value="Login">
             </form>
             <a asp-area="" asp-controller="Home" asp-action="RecSenha" class="forgot-password-link">Esqueceu sua senha?</a>
             <p class="login-wrapper-footer-text">Ainda não possui conta? <a asp-area="" asp-controller="Home" asp-action="Cadastro" class="text-reset">Registre-se!</a></p>
