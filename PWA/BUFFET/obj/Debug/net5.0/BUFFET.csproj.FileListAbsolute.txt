@@ -60,3 +60,5 @@ C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Pomelo.JsonObject.dll
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

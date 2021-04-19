@@ -10,6 +10,7 @@ using BUFFET.Models.Buffet.Evento;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,6 +36,17 @@ namespace BUFFET
             services.AddDbContext<DataBaseContext>(optionsAction:options =>
                 options.UseMySql(Configuration.GetConnectionString("BuffetDB")));
 
+            services.AddIdentity<Usuario, UsuarioPapel>(setupAction: options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequiredLength = 6;
+                
+            }).AddEntityFrameworkStores<DataBaseContext>();
+
+            services.ConfigureApplicationCookie(Options =>
+            {
+                Options.LoginPath = "/Access/Login";
+            });
             services.AddTransient<UsuarioService>();
             services.AddTransient<ClienteService>();
             services.AddTransient<ConvidadoService>();
@@ -59,7 +71,7 @@ namespace BUFFET
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

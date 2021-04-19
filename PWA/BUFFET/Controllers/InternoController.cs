@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BUFFET.Controllers
 {
+    [Authorize]
     public class InternoController : Controller
     {
         // GET
         public IActionResult Index()
         {
+            
+            
             return View();
         }
         public IActionResult TermosUso()

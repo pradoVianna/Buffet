@@ -10,7 +10,10 @@ namespace BUFFET.Models.Buffet.Access
         {
             _dataBaseContext = dataBaseContext;
         }
-        
-        
+
+        public bool LoginVerify(string email, string senha)
+        {
+            return false;
+        }
     }
 }

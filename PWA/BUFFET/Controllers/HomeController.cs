@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BUFFET.Models;
 using BUFFET.Models.Buffet.Access;
+using BUFFET.Models.Buffet.Cliente;
+using BUFFET.Models.Buffet.Convidado;
+using BUFFET.Models.Buffet.Evento;
 
 namespace BUFFET.Controllers
 {
@@ -15,10 +18,18 @@ namespace BUFFET.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UsuarioService _usuarioService;
-        public HomeController(ILogger<HomeController> logger, UsuarioService usuarioService)
+        private readonly ClienteService _clienteService;
+        private readonly EventoService _eventoService;
+        private readonly ConvidadoService _convidadoService;
+        public HomeController(ILogger<HomeController> logger, UsuarioService usuarioService,
+            ClienteService clienteService, EventoService eventoService, ConvidadoService convidadoService)
         {
             _logger = logger;
             _usuarioService = usuarioService;
+            _clienteService = clienteService;
+            _eventoService =  eventoService;
+            _convidadoService = convidadoService;
+
         }
 
         public IActionResult Index()
@@ -33,6 +44,9 @@ namespace BUFFET.Controllers
         
         public IActionResult Login()
         {
+            
+            
+            
             return View();
         }
     
