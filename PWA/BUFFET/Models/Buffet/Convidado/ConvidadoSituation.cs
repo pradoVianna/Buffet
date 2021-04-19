@@ -2,7 +2,19 @@
 {
     public class ConvidadoSituation
     {
+        public ConvidadoSituation()
+        {
+        }
+
         public int Id { get; set; }
-        public string Descricao { get; set; }
+        public EConvidadoSituacao Descricao { get; set; }
+    }
+
+    public enum EConvidadoSituacao
+    {
+        CONFIRMADO,
+        CANCELADO,
+        EM_DUVIDA,
+        OUTROS
     }
 }

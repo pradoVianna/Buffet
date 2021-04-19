@@ -2,6 +2,10 @@
 {
     public class EventoType
     {
+        public EventoType()
+        {
+        }
+
         public int Id { get; set; }
         public EEventoDescricao Descricao { get; set; }
     }
