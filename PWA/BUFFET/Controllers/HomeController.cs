@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BUFFET.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BUFFET.Models;
+using BUFFET.Models.Buffet.Access;
 
 namespace BUFFET.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DataBaseContext _dataBaseContext;
+        public HomeController(ILogger<HomeController> logger
+            ,DataBaseContext dataBaseContext
+        )
         {
             _logger = logger;
+            _dataBaseContext = dataBaseContext;
         }
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
