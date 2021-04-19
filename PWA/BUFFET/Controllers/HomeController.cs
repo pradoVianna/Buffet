@@ -14,18 +14,15 @@ namespace BUFFET.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly DataBaseContext _dataBaseContext;
-        public HomeController(ILogger<HomeController> logger
-            ,DataBaseContext dataBaseContext
-        )
+        private readonly UsuarioService _usuarioService;
+        public HomeController(ILogger<HomeController> logger, UsuarioService usuarioService)
         {
             _logger = logger;
-            _dataBaseContext = dataBaseContext;
+            _usuarioService = usuarioService;
         }
 
         public IActionResult Index()
         {
-            
             return View();
         }
 

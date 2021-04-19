@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BUFFET.Data;
+using BUFFET.Models.Buffet.Access;
+using BUFFET.Models.Buffet.Cliente;
+using BUFFET.Models.Buffet.Convidado;
+using BUFFET.Models.Buffet.Evento;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +35,10 @@ namespace BUFFET
             services.AddDbContext<DataBaseContext>(optionsAction:options =>
                 options.UseMySql(Configuration.GetConnectionString("BuffetDB")));
 
+            services.AddTransient<UsuarioService>();
+            services.AddTransient<ClienteService>();
+            services.AddTransient<ConvidadoService>();
+            services.AddTransient<EventoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
