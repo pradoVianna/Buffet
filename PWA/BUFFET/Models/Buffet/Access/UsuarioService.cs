@@ -1,4 +1,6 @@
-﻿using BUFFET.Data;
+﻿using System;
+using System.Threading.Tasks;
+using BUFFET.Data;
 using Microsoft.AspNetCore.Identity;
 
 namespace BUFFET.Models.Buffet.Access
@@ -19,13 +21,21 @@ namespace BUFFET.Models.Buffet.Access
 
         }
 
-        public void RegisterUser(string nome, string email, string senha, string confirmSenha)
+        public async Task RegisterUser(string nome, string email, string senha, string confirmSenha)
         {
             var novoUser = new Usuario()
             {
                 UserName = nome,
                 Email = email
             };
+            
+               var resultado = await _userManager.CreateAsync(novoUser, senha);
+
+               if (!resultado.Succeeded)
+               {
+                   
+                   throw new CadastroUsuarioException(resultado.Errors);
+               }
             
         }
     }
