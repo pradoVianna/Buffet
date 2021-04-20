@@ -38,9 +38,6 @@ C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\BUFFET.pdb
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\BUFFET.genruntimeconfig.cache
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\BUFFET.csproj.CopyComplete
-C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
-C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\Cadastro.cshtml.g.cs
-C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\RecSenha.cshtml.g.cs
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Home\TermosUso.cshtml.g.cs
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\Index.cshtml.g.cs
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\Interno\_Layout.cshtml.g.cs
@@ -62,3 +59,6 @@ C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Pomelo.JsonObject.dll
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\System\Cadastro.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\System\Login.cshtml.g.cs
+C:\Users\Pedro\Desktop\index_c#\webapps\BuffetProjeto\PWA\BUFFET\obj\Debug\net5.0\Razor\Views\System\RecSenha.cshtml.g.cs

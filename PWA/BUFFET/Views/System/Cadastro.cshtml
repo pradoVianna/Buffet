@@ -1,4 +1,6 @@
-﻿@{
+﻿@model BUFFET.ViewModels.System.CadastroViewModel;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,23 +12,34 @@
                 <img src="https://www.piktotal.com.br/wp-content/themes/piktotal/assets/img/titulo-buffet.png"   alt="logo" class="logo">
               </div>
               <div class="login-wrapper my-auto">
+                
+                
                 <h1 class="login-title">Complete os dados abaixo:</h1>
-                <form action="#!">
+                <form action="/System/Cadastro" method="post" class="text-left">
+                  @if(Model.Message != null)
+                  {
+                    <div class="alert alert-warning" role="alert">@Model.Message</div>
+                  }
                   <div class="form-group">
-                     <label for="name">Nome</label>
-                     <input type="text" name="name" id="name" class="form-control" placeholder="Digite seu nome..">
-                   </div>
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Digite seu nome..">
+                  </div>
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="seunome@exemplo.com">
                   </div>
                   <div class="form-group mb-4">
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Digite sua senha..">
                   </div>
-                  <input name="registrar" id="registrar" class="btn-block login-btn btn btn-secondary" type="button" value="Registrar">
+                  <div class="form-group mb-4">
+                    <label for="passwordConfirm">Confirme sua senha</label>
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" placeholder="Confirme sua senha..">
+                  </div>
+
+                  <input name="registrar" id="registrar" class="btn-block login-btn btn btn-secondary" type="submit" value="Registrar">
                 </form>
-                
+
               </div>
             </div>
             <div class="col-sm-6 px-0 d-none d-sm-block">

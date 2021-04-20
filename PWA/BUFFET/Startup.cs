@@ -45,7 +45,7 @@ namespace BUFFET
 
             services.ConfigureApplicationCookie(Options =>
             {
-                Options.LoginPath = "/Access/Login";
+                Options.LoginPath = "/System/Login";
             });
             services.AddTransient<UsuarioService>();
             services.AddTransient<ClienteService>();
