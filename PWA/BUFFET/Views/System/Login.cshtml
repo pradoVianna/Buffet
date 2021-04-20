@@ -12,14 +12,18 @@
           </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Log in</h1>
-            <form asp-area="" asp-controller="Interno" asp-action="Index" method="post" class="text-left">
+            <form action="/System/Login" method="post" class="text-left">
               @if(Model.Message != null)
               {
                  <div class="alert alert-success" role="alert">@Model.Message</div>
               }
+              @if(Model.MessageLogin != null)
+              {
+                 <div class="alert alert-danger" role="alert">@Model.MessageLogin</div>
+              }
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="seunome@exemplo.com">
+                <label for="userName">Nome de usuário</label>
+                <input type="text" name="userName" id="userName" class="form-control" placeholder="Digite seu nome de usuário..">
               </div>
               <div class="form-group mb-4">
                 <label for="password">Password</label>

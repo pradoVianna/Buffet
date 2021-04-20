@@ -17,12 +17,41 @@ namespace BUFFET.Controllers
             _usuarioService = usuarioService;
         }
 
-        // GET
+        [HttpGet]
         public IActionResult Login()
         {  
-            var viewmodel = new CadastroViewModel();
+            var viewmodel = new LoginViewModel();
             viewmodel.Message = (string) TempData["msg-cadastro"];
+            viewmodel.MessageLogin = (string) TempData["msg-login"];
             return View(viewmodel);
+        }
+        [HttpPost]
+        public async Task<RedirectResult> Login(LoginAcessoRequestModel request)
+        {  
+            var userName = request.UserName;
+            var senha = request.Password;
+            
+            if (userName == null)
+            {
+                TempData["msg-login"] = "Informe o e-mail!";
+                return Redirect("/System/Login");
+            }else if (senha == null)
+            {
+                TempData["msg-login"] = "Informe a senha!";
+                return Redirect("/System/Login");
+            }
+
+            try
+            {
+                await _usuarioService.AuthUser(userName, senha);
+                
+                return Redirect("/Interno/Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["msg-login"] = ex.Message;
+                return Redirect("/System/Login");
+            }
         }
         [HttpGet]
         public IActionResult Cadastro()
@@ -44,19 +73,23 @@ namespace BUFFET.Controllers
 
             if (email == null)
             {
-                TempData["msg-cadastro"] = "Informe o e-mail";
+                TempData["msg-cadastro"] = "Informe o e-mail!";
                 return RedirectToAction("Cadastro");
             }else if (senha == null)
             {
-                TempData["msg-cadastro"] = "Informe a senha";
+                TempData["msg-cadastro"] = "Informe a senha!";
                 return RedirectToAction("Cadastro");
             }else if (confirm == null)
             {
-                TempData["msg-cadastro"] = "Confirme a senha";
+                TempData["msg-cadastro"] = "Confirme a senha!";
                 return RedirectToAction("Cadastro");
             }else if (nome == null)
             {
-                TempData["msg-cadastro"] = "Informe o nome";
+                TempData["msg-cadastro"] = "Informe o nome!";
+                return RedirectToAction("Cadastro");
+            }else if (!senha.Equals(confirm))
+            {
+                TempData["msg-cadastro"] = "A confirmação deve ser igual à senha!";
                 return RedirectToAction("Cadastro");
             }
 

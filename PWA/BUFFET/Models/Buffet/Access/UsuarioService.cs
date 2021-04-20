@@ -21,6 +21,14 @@ namespace BUFFET.Models.Buffet.Access
 
         }
 
+        public async Task AuthUser(string userName, string senha)
+        {
+            var resultado = await _singInManager.PasswordSignInAsync(userName, senha, false, false);
+            if (!resultado.Succeeded)
+            {
+                throw new Exception("E-mail ou senha inválidos.");
+            }
+        }
         public async Task RegisterUser(string nome, string email, string senha, string confirmSenha)
         {
             var novoUser = new Usuario()
@@ -33,7 +41,6 @@ namespace BUFFET.Models.Buffet.Access
 
                if (!resultado.Succeeded)
                {
-                   
                    throw new CadastroUsuarioException(resultado.Errors);
                }
             
