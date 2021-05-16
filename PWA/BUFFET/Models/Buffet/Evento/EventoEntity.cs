@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using BUFFET.Models.Buffet.Cliente;
 
 namespace BUFFET.Models.Buffet.Evento
@@ -23,6 +24,23 @@ namespace BUFFET.Models.Buffet.Evento
             DataIn = dataIn;
             DataLast = dataLast;
         }
+
+        public EventoEntity(int id, EventoType tipo, string descricao, DateTime dataHoraInicial, DateTime dataHoraFinal, ClienteEntity clienteResponsavel, EventoLocal local, EventoSituation situtacao, string obs, DateTime dataIn, DateTime dataLast)
+        {
+            Id = id;
+            Tipo = tipo;
+            Descricao = descricao;
+            DataHoraInicial = dataHoraInicial;
+            DataHoraFinal = dataHoraFinal;
+            ClienteResponsavel = clienteResponsavel;
+            Local = local;
+            Situtacao = situtacao;
+            Obs = obs;
+            DataIn = dataIn;
+            DataLast = dataLast;
+        }
+
+        [Key]public int Id { get; set; }
         public EventoType Tipo { get; set; }
         public string Descricao { get; set; }
         public DateTime DataHoraInicial  { get; set; }

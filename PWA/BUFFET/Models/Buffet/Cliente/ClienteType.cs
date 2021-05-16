@@ -1,8 +1,10 @@
-﻿namespace BUFFET.Models.Buffet.Cliente
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BUFFET.Models.Buffet.Cliente
 {
     public class ClienteType
     {
-        public int Id { get; set; }
+        [Key]public int Id { get; set; }
         public EClienteDescricao Descricao { get; set; }
 
         public ClienteType(EClienteDescricao descricao)
