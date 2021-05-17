@@ -41,5 +41,9 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        public IActionResult Cliente()
+        {
+            return View();
+        }
     }
 }

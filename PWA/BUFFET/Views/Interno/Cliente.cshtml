@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Controle Geral</h1>
+<ul class="nav navbar-dark nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" asp-controller="Interno" asp-action="Index">Informações</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Interno" asp-action="Agenda">Agenda</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Interno" asp-action="Eventos">Eventos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Interno" asp-action="Financeiro">Financeiro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link  active" asp-controller="Interno" asp-action="Cliente">Clientes</a>
+    </li>
+</ul>
+
+<div>
+    
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data Nascimento</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Data Inserção</th>
+            <th scope="col">Último Acesso</th>
+           <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td >Id</td>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Endereço</td>
+            <td>CNPJ</td>
+            <td>CPF</td>
+            <td>Data Nascimento</td>
+            <td>Observação</td>
+            <td>Data Inserção</td>
+            <td>Último Acesso</td>
+            <td>
+                            <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
+                            <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
+                        </td>
+        </tr>
+        <tr>
+            <td >Id</td>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Endereço</td>
+            <td>CNPJ</td>
+            <td>CPF</td>
+            <td>Data Nascimento</td>
+            <td>Observação</td>
+            <td>Data Inserção</td>
+            <td>Último Acesso</td>
+            <td>
+                            <a href='#'><i class="fas fa-plus-alt" ></i></a>
+                            <a href='#'><i class="fas fa-pencil-alt" ></i></a>
+                            <a href='#'><i class="fas fa-trash-alt"></i></a>
+                        </td>
+        </tr>
+        <
+        <tr>
+            <td >Id</td>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Endereço</td>
+            <td>CNPJ</td>
+            <td>CPF</td>
+            <td>Data Nascimento</td>
+            <td>Observação</td>
+            <td>Data Inserção</td>
+            <td>Último Acesso</td>
+            <td>
+                <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
+                <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <footer>
+        <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
+         <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
+        <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
+    </footer>
+    
+</div>
