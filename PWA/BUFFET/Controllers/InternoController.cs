@@ -50,5 +50,17 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        public IActionResult CadEvento()
+        {
+            return View();
+        }
+        public IActionResult Locais()
+        {
+            return View();
+        }
+        public IActionResult CadLocal()
+        {
+            return View();
+        }
     }
 }
