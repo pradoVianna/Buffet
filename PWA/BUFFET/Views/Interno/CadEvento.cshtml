@@ -2,55 +2,45 @@
     ViewData["Title"] = "Clientes";
 }
 
-<div class="text-center">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 login-section-wrapper">
-                <div class="brand-wrapper">
-                    <img src="https://www.piktotal.com.br/wp-content/themes/piktotal/assets/img/titulo-buffet.png" alt="logo" class="logo">
-                </div>
-                <div class="login-wrapper my-auto">
-                    <h1 class="login-title">Cadastro Evento</h1>
+                    <h1 class="display-1 text-center">Cadastro Evento</h1><hr>
 
                     <form action="" method="post" class="text-left">
 
-                        <div class="form-group">
+                        <div class="d-flex justify-content-center">
                             <label for="eventDesc">Decrição</label>
-                            <input type="text" name="eventDesc" id="eventDesc" class="form-control" placeholder="Digite a descrição..">
+                            <input type="text" name="eventDesc" id="eventDesc" class="ml-3 mr-3 mb-5 w-100 form-control" placeholder="Digite a descrição..">
                         </div>
-                        <div class="form-group">
+                        <div class="d-flex justify-content-center">
                             <label for="eventDataInicio">Data Início</label>
-                            <input type="date" name="eventDataInicio" id="eventDataInicio" class="form-control" placeholder="Digite o e-mail..">
-                        </div>
-                        <div class="form-group">
+                            <input type="date" name="eventDataInicio" id="eventDataInicio" class="ml-3 mr-3 w-50 form-control" placeholder="Digite o e-mail..">
+                        
+                        
                             <label for="eventDataFim">Data Fim</label>
-                            <input type="date" name="eventDataFim" id="eventDataFim" class="form-control" placeholder="Digite o e-mail..">
+                            <input type="date" name="eventDataFim" id="eventDataFim" class="ml-3 mr-3 w-50 form-control" placeholder="Digite o e-mail..">
                         </div>
-                        <div class="form-group">
-                            <label for="eventClient">Nome Cliente</label><br>
+                        <div class="d-flex justify-content-center mb-3 mt-3">
+                            <label for="eventClient">Cliente</label><br>
 
-                            <select id="eventClient" name="eventClient" class="form-control">
+                            <select id="eventClient" name="eventClient" class="ml-3 w-50  form-control">
                                 <option value=""></option>
                                 <option value="">Nome 1</option>
                                 <option value="">Nome 2</option>
                                 <option value="">Nome 3</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="d-flex justify-content-center">
                             <label for="eventLocal">Nome Local</label><br>
 
-                            <select id="eventLocal" name="eventLocal" class="form-control">
+                            <select id="eventLocal" name="eventLocal" class="ml-3 w-50 mr-3 form-control">
                                 <option value=""></option>
                                 <option value="">Local 1</option>
                                 <option value="">Local 2</option>
                                 <option value="">Local 3</option>
                             </select>
-                        </div>
-                        <div class="form-group">
+                        
                             <label for="eventSituation">Situação</label><br>
 
-                            <select id="eventSituation" name="eventSituation" class="form-control">
+                            <select id="eventSituation" name="eventSituation" class="ml-3 w-50 form-control">
                                 <option value=""></option>
                                 <option value="CONFIRMADO">Confirmado</option>
                                 <option value="CANCELADO">Cancelado</option>
@@ -58,29 +48,21 @@
                                 <option value="OUTROS">Outros</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="d-flex justify-content-center">
                             <label for="eventObs">Observação</label>
-                            <input type="text" name="eventObs" id="eventObs" class="form-control" placeholder="Digite a observação..">
+                            <textarea name="eventObs" id="eventObs" class="ml-3 form-control" placeholder="Digite a observação.."></textarea>
                         </div>
-                       
+                       <hr>
                         <input name="Cadastrar" id="Cadastrar" class="btn-block btn btn-secondary" type="submit" value="Cadastrar">
                         <p class="login-wrapper-footer-text">
                             <a asp-area="" asp-controller="Interno" asp-action="Eventos" class="text-reset">Voltar</a>
                         </p>
                     </form>
 
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
+                
 
 @section Scripts{
     <script>
   
   </script>
 }
-
-;
