@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BUFFET.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20210516224347_tabelas")]
-    partial class tabelas
+    [Migration("20210518003943_mig_teste")]
+    partial class mig_teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

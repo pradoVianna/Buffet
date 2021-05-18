@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BUFFET.Migrations
 {
-    public partial class tabelas : Migration
+    public partial class mig_teste : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
