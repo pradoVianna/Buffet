@@ -45,5 +45,10 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
+        public IActionResult CadCliente()
+        {
+            return View();
+        }
     }
 }

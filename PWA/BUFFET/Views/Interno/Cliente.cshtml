@@ -40,65 +40,34 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td >Id</td>
-            <td>Nome</td>
-            <td>E-mail</td>
-            <td>Endereço</td>
-            <td>CNPJ</td>
-            <td>CPF</td>
-            <td>Data Nascimento</td>
-            <td>Observação</td>
-            <td>Data Inserção</td>
-            <td>Último Acesso</td>
-            <td>
-                            <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
-                            <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
-                            <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
-                        </td>
-        </tr>
-        <tr>
-            <td >Id</td>
-            <td>Nome</td>
-            <td>E-mail</td>
-            <td>Endereço</td>
-            <td>CNPJ</td>
-            <td>CPF</td>
-            <td>Data Nascimento</td>
-            <td>Observação</td>
-            <td>Data Inserção</td>
-            <td>Último Acesso</td>
-            <td>
-                            <a href='#'><i class="fas fa-plus-alt" ></i></a>
-                            <a href='#'><i class="fas fa-pencil-alt" ></i></a>
-                            <a href='#'><i class="fas fa-trash-alt"></i></a>
-                        </td>
-        </tr>
-        <
-        <tr>
-            <td >Id</td>
-            <td>Nome</td>
-            <td>E-mail</td>
-            <td>Endereço</td>
-            <td>CNPJ</td>
-            <td>CPF</td>
-            <td>Data Nascimento</td>
-            <td>Observação</td>
-            <td>Data Inserção</td>
-            <td>Último Acesso</td>
-            <td>
-                <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
-                <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
-                <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
-            </td>
-        </tr>
+      
+        @for (int i = 1; i <= 10; i++)
+        {
+            <tr>
+                <td >@i</td>
+                <td>Nome</td>
+                <td>E-mail</td>
+                <td>Endereço</td>
+                <td>CNPJ</td>
+                <td>CPF</td>
+                <td>Data Nascimento</td>
+                <td>Observação</td>
+                <td>Data Inserção</td>
+                <td>Último Acesso</td>
+                <td>
+                    <a href='#'><i class="fas fa-plus-alt" ></i>Alterar</a>
+                    <a href='#'><i class="fas fa-pencil-alt" ></i>Excluir</a>
+                </td>
+            </tr>
+            
+        }
+        
         </tbody>
     </table>
     
     <footer>
-        <a href='#'><i class="fas fa-plus-square-o" aria-hidden="true"></i></a>
-         <a href='#'><i class="fas fa-pencil-square-o" aria-hidden="true"></i></a>
-        <a href='#'><i class="fa fa-trash-square-o" aria-hidden="true"></i></a>
+       <a class="btn btn-secondary nav-link text-dark" asp-area="" asp-controller="Interno" asp-action="CadCliente"><b>Novo Cliente</b></a>
+        
     </footer>
     
 </div>
