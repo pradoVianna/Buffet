@@ -8,6 +8,7 @@
       <Compile Remove="Models\Buffet\Cliente\ClienteSituation.cs" />
       <Compile Remove="Controllers\AcessoController.cs" />
       <Compile Remove="Controllers\AccessController.cs" />
+      <Compile Remove="Controllers\Cliente.cs" />
     </ItemGroup>
 
     <ItemGroup>

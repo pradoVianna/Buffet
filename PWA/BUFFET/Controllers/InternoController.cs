@@ -6,6 +6,7 @@ namespace BUFFET.Controllers
     [Authorize]
     public class InternoController : Controller
     {
+        
         // GET
         public IActionResult Index()
         {
@@ -62,5 +63,8 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
+        
+        
     }
 }
