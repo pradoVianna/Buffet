@@ -21,22 +21,14 @@
                         <div class="d-flex justify-content-center mb-3 mt-3">
                             <label for="eventClient">Cliente</label><br>
 
-                            <select id="eventClient" name="eventClient" class="ml-3 w-50  form-control">
-                                <option value=""></option>
-                                <option value="">Nome 1</option>
-                                <option value="">Nome 2</option>
-                                <option value="">Nome 3</option>
+                            <select id="eventClient" name="eventClient" asp-items="Model.EventoLocal" class="ml-3 w-50  form-control">
                             </select>
                         </div>
                         <div class="d-flex justify-content-center">
                             <label for="eventLocal">Nome Local</label><br>
 
-                            <select id="eventLocal" name="eventLocal" class="ml-3 w-50 mr-3 form-control">
-                                <option value=""></option>
-                                <option value="">Local 1</option>
-                                <option value="">Local 2</option>
-                                <option value="">Local 3</option>
-                            </select>
+                             <select id="eventNomeLocal" name="eventNomeLocal" asp-items="Model.EventoLocal" class="ml-3 w-50  form-control">
+                                                        </select>
                         
                             <label for="eventSituation">Situação</label><br>
 

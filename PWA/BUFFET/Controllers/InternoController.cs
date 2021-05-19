@@ -1,35 +1,37 @@
-<<<<<<< HEAD
-﻿using System.Reflection.Metadata;
+
+using System;
+using System.Collections.Generic;
+using System.Reflection.Metadata;
 using BUFFET.Models.Buffet.Evento;
 using BUFFET.ViewModels.Internal;
-=======
-﻿using BUFFET.Models.Buffet.Cliente;
+
+using BUFFET.Models.Buffet.Cliente;
+using BUFFET.RequestModels;
 using BUFFET.ViewModels.Interno;
->>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
-using Microsoft.AspNetCore.Authorization;
+ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BUFFET.Controllers
 {
     [Authorize]
     public class InternoController : Controller
     {
-<<<<<<< HEAD
-        private readonly EventoLocalService _eventoLocalService;
 
-        public InternoController(EventoLocalService eventoLocalService)
+        private readonly EventoLocalService _eventoLocalService;
+        
+        private readonly ClienteService _clienteService;
+
+        public InternoController(EventoLocalService eventoLocalService,ClienteService clienteService)
         {
             _eventoLocalService = eventoLocalService;
-        }
-
-=======
-        private readonly ClienteService _clienteService;
->>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
-        // GET
-        public InternoController(ClienteService clienteService)
-        {
             _clienteService = clienteService;
         }
+
+
+
+        // GET
+       
 
         public IActionResult Index()
         {
@@ -85,8 +87,22 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
+        [HttpGet]
         public IActionResult CadEvento()
         {
+            var viewModel = new AdicionarLocalViewModel();
+
+            var locais = _eventoLocalService.ListaTodos();
+            foreach (var eventoLocal in locais) {
+                viewModel.EventoLocal.Add(new SelectListItem()
+                {
+                    Value = eventoLocal.Id.ToString(),
+                    Text = eventoLocal.Descricao
+                });
+            }
+
+            return View(viewModel);
             return View();
         }
         
@@ -94,6 +110,7 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
         public IActionResult Locais()
         {
             var viewModel = new LocaisViewModel();
@@ -117,7 +134,30 @@ namespace BUFFET.Controllers
         {
             return View();
         }
-        
+
+       [HttpPost]
+        public RedirectToActionResult Adicionar(CadastroLocalRequestModel requestModel)
+        {
+          
+            var listaDeErros = requestModel.ValidarEFiltrar();
+            if (listaDeErros.Count > 0) {
+                TempData["formMensagensErro"] = listaDeErros;
+
+                return RedirectToAction("Adicionar");
+            }
+           
+            try {
+                _eventoLocalService.Adicionar(requestModel);
+                TempData["formMensagemSucesso"] = "Gasto adicionado com sucesso!";
+
+                return RedirectToAction("Locais");
+            } catch (Exception exception) {
+                TempData["formMensagensErro"] = new List<string> {exception.Message};
+
+                return RedirectToAction("CadLocal");
+            }
+        }
+    
         public IActionResult Editar()
         {
             return View();
