@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BUFFET.Models.Buffet.Cliente;
+using BUFFET.ViewModels.Interno;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BUFFET.Controllers
@@ -6,8 +8,13 @@ namespace BUFFET.Controllers
     [Authorize]
     public class InternoController : Controller
     {
-        
+        private readonly ClienteService _clienteService;
         // GET
+        public InternoController(ClienteService clienteService)
+        {
+            _clienteService = clienteService;
+        }
+
         public IActionResult Index()
         {
             
@@ -42,11 +49,22 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
+        //listar::cliente
         public IActionResult Cliente()
         {
-            return View();
+            var viewModel = new ClienteViewModel();
+
+            var listaClientes = _clienteService.ObterTodos();
+
+            foreach (ClienteEntity clienteEntity in listaClientes)
+            {
+                
+            }
+            
+            return View(viewModel);
         }
-        
+        //add::cliente
         public IActionResult CadCliente()
         {
             return View();

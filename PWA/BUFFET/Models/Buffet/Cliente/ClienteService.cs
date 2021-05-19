@@ -8,27 +8,20 @@ namespace BUFFET.Models.Buffet.Cliente
 {
     public class ClienteService
     {
-        private readonly DataBaseContext _dataBaseContext;
         [Key]public int Id { get; set; }
+        
+        private readonly DataBaseContext _dataBaseContext;
         public ClienteService(DataBaseContext dataBaseContext)
         {
             _dataBaseContext = dataBaseContext;
         }
-        
+
+
         public ICollection<ClienteEntity> ObterTodos()
         {
-            return _dataBaseContext.Cliente.Include(g => g.Nome)
-                .ToList();
+            return _dataBaseContext.Cliente.Include(c => c.Tipo).ToList();
         }
-
-        public ClienteEntity Adicionar(ClienteEntity c)
-        {
-            var novoCliente = c;
-            _dataBaseContext.Cliente.Add(novoCliente);
-            _dataBaseContext.SaveChanges();
-
-            return novoCliente;
-        }
+       
         
     }
 }
