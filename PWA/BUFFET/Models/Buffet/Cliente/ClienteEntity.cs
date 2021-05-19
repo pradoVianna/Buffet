@@ -6,7 +6,7 @@ namespace BUFFET.Models.Buffet.Cliente
     public class ClienteEntity
     {
 
-        [Key]public Guid Id { get; set; }
+        [Key]public int Id { get; set; }
         public ClienteType Tipo { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
