@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Eventos";
+﻿@using BUFFET.ViewModels.Internal
+@model BUFFET.ViewModels.Internal.LocaisViewModel;
+@{
+    ViewData["Title"] = "Evento";
 }
 
 <h1>Controle Geral</h1>
@@ -36,19 +38,22 @@
            </tr>
         </thead>
         <tbody>
-
-        @for (int i = 1; i <= 10; i++)
+        
+        @foreach (Local local in @Model.Local)
         {
             <tr>
-                <td >@i</td>
-                <td>1</td>
-                <td>E-2</td>
+                <td >@local.Id</td>
+                <td >@local.Descricao</td>
+                 <td >@local.Endereco</td>
                 <td>
                     <a href='#'><i class="fas fa-plus-alt"></i>Alterar</a>
                     <a href='#'><i class="fas fa-pencil-alt"></i>Excluir</a>
                 </td>
             </tr>
+            
         }
+
+      
 
         </tbody>
     </table>

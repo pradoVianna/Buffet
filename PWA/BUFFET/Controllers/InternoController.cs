@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Intrinsics.Arm;
 using BUFFET.Models.Buffet.Cliente;
 using BUFFET.RequestModels;
+=======
+<<<<<<< HEAD
+﻿using System.Reflection.Metadata;
+using BUFFET.Models.Buffet.Evento;
+using BUFFET.ViewModels.Internal;
+=======
+﻿using BUFFET.Models.Buffet.Cliente;
+>>>>>>> origin/master
 using BUFFET.ViewModels.Interno;
+>>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +22,17 @@ namespace BUFFET.Controllers
     [Authorize]
     public class InternoController : Controller
     {
+<<<<<<< HEAD
+        private readonly EventoLocalService _eventoLocalService;
+
+        public InternoController(EventoLocalService eventoLocalService)
+        {
+            _eventoLocalService = eventoLocalService;
+        }
+
+=======
         private readonly ClienteService _clienteService;
+>>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
         // GET
         public InternoController(ClienteService clienteService)
         {
@@ -143,15 +163,44 @@ namespace BUFFET.Controllers
         {
             return View();
         }
-        public IActionResult Locais()
-        {
-            return View();
-        }
+        
         public IActionResult CadLocal()
         {
             return View();
         }
+        public IActionResult Locais()
+        {
+            var viewModel = new LocaisViewModel();
+
+            var listaLocais = _eventoLocalService.ListaTodos();
+
+            foreach (EventoLocal eventoLocal in listaLocais)
+            {
+                viewModel.Local.Add(new Local()
+                {
+                    Id = eventoLocal.Descricao.ToString(),
+                    Descricao = eventoLocal.Descricao.ToString(),
+                    Endereco = eventoLocal.Endereco.ToString()
+                });
+
+            }
+            return View(viewModel);
+        }
         
+        public IActionResult Adicionar()
+        {
+            return View();
+        }
+        
+        public IActionResult Editar()
+        {
+            return View();
+        }
+        
+        public IActionResult Deletar()
+        {
+            return View();
+        }
         
         
     }
