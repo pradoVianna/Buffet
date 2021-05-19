@@ -1,4 +1,7 @@
-﻿@{
+﻿@using BUFFET.ViewModels.Interno
+@model BUFFET.ViewModels.Interno.ClienteViewModel
+
+@{
     ViewData["Title"] = "Clientes";
 }
 
@@ -44,25 +47,26 @@
         </thead>
         <tbody>
       
-        @for (int i = 1; i <= 10; i++)
+        @foreach (Cliente cliente in @Model.Clientes)
         {
+
             <tr>
-                <td >@i</td>
-                <td>1</td>
-                <td>E-2</td>
-                <td>6</td>
-                <td>8</td>
-                <td>3</td>
-                <td>Data 4</td>
-                <td>5</td>
-                <td>Data 6</td>
-                <td>Último 7</td>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Endereco</td>
+                <td>@cliente.Cnpj</td>
+                <td>@cliente.Cpf</td>
+                <td>@cliente.DataNasc</td>
+                <td>@cliente.Obs</td>
+                <td>@cliente.DataIn</td>
+                <td>@cliente.DataLast</td>
                 <td>
-                    <a href='#'><i class="fas fa-plus-alt" ></i>Alterar</a>
-                    <a href='#'><i class="fas fa-pencil-alt" ></i>Excluir</a>
+                    <a href="Interno/EditCliente/@cliente.Id"><i class="fas fa-plus-alt"></i>Alterar</a>
+                    <a href="Interno/RemoveCliente/@cliente.Id"><i class="fas fa-pencil-alt"></i>Excluir</a>
                 </td>
             </tr>
-            
+
         }
         
         </tbody>

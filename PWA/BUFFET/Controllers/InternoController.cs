@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 ﻿using System.Reflection.Metadata;
 using BUFFET.Models.Buffet.Evento;
 using BUFFET.ViewModels.Internal;
+=======
+﻿using BUFFET.Models.Buffet.Cliente;
+using BUFFET.ViewModels.Interno;
+>>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +14,7 @@ namespace BUFFET.Controllers
     [Authorize]
     public class InternoController : Controller
     {
+<<<<<<< HEAD
         private readonly EventoLocalService _eventoLocalService;
 
         public InternoController(EventoLocalService eventoLocalService)
@@ -16,7 +22,15 @@ namespace BUFFET.Controllers
             _eventoLocalService = eventoLocalService;
         }
 
+=======
+        private readonly ClienteService _clienteService;
+>>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
         // GET
+        public InternoController(ClienteService clienteService)
+        {
+            _clienteService = clienteService;
+        }
+
         public IActionResult Index()
         {
             
@@ -51,11 +65,22 @@ namespace BUFFET.Controllers
         {
             return View();
         }
+        
+        //listar::cliente
         public IActionResult Cliente()
         {
-            return View();
+            var viewModel = new ClienteViewModel();
+
+            var listaClientes = _clienteService.ObterTodos();
+
+            foreach (ClienteEntity clienteEntity in listaClientes)
+            {
+                
+            }
+            
+            return View(viewModel);
         }
-        
+        //add::cliente
         public IActionResult CadCliente()
         {
             return View();
