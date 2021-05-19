@@ -3,17 +3,29 @@
 }
 
 
+
+
+@if(@Model.FormMessagensErro != null){
+
+<ul>
+  @foreach (var msgErro in @Model.FormMessagensErro)
+  {
+    <li>@msgErro</li>
+  }
+</ul>
+
+}
         
-            <h1 class="display-1 text-center">Cadastro Cliente</h1><hr>
+<h1 class="display-1 text-center">Cadastro Cliente</h1><hr>
             
-            <form action="" method="post" class="text-left">
+            <form asp-controller="Interno" asp-action="CadCliente" method="post" class="text-left">
              
               <div class="d-flex justify-content-center">
                 <label for="clientName">Nome</label>
-                <input type="text" name="clientName" id="clientName" class="w-50 form-control ml-3 mr-3" placeholder="Nome completo..">
+                <input type="text" name="Nome" id="Nome" class="w-50 form-control ml-3 mr-3" placeholder="Nome completo..">
               
                 <label for="clientEmail">E-mail</label>
-                <input type="text" name="clientEmail" id="clientEmail" class="w-50 form-control ml-3" placeholder="E-mail..">
+                <input type="text" name="Email" id="Email" class="w-50 form-control ml-3" placeholder="E-mail..">
               </div>
               <div class="row">
                 <div class="col-2">
@@ -22,20 +34,20 @@
               </div>
               <div class="row">
                 <div class="col text-center"><label for="clientTipo1">Físico</label>
-                  <input type="radio" name="clientTipo" class="form-control" id="clientTipo1" value="1">
+                  <input type="radio" name="Tipo" class="form-control" id="clientTipo1" value="FISICA">
                 </div>
                 
                 <div class="col text-center"><label for="clientTipo2">Jurídico</label>
-                  <input type="radio" name="clientTipo"class="form-control" id="clientTipo2" value="2">
+                  <input type="radio" name="Tipo"class="form-control" id="clientTipo2" value="JURIDICA">
                 </div>
                 </div>
               
               <div class="d-flex justify-content-center">
                 <label for="clientEnd">Endereço</label>
-                <input type="text" name="clientEnd" id="clientEnd" class=" form-control ml-3 mr-3 w-50" placeholder="Endereço..">
+                <input type="text" name="Endereco" id="Endereco" class=" form-control ml-3 mr-3 w-50" placeholder="Endereço..">
               
                 <label for="clientObs">Observações</label>
-                <textarea name="clientObs" id="clientObs" class="form-control ml-3 w-50 " placeholder="Observações.."></textarea>
+                <textarea name="Obs" id="Obs" class="form-control ml-3 w-50 " placeholder="Observações.."></textarea>
               </div>
              <div class="d-flex justify-content-center mt-3">
                 <label for="clientDocument" id="labelDoc"></label>
@@ -43,7 +55,7 @@
                 <div id="hide">
                   <div class="d-flex">
                   <label for="clientDataNasc">Data de Nascimento</label>
-                  <input type="date" name="clientDataNasc" id="clientDataNasc" class=" form-control ml-3 mt-2">
+                  <input type="date" name="DataNasc" id="DataNasc" class=" form-control ml-3 mt-2">
                   </div>
                   </div>
                 </div>
@@ -65,12 +77,14 @@
       $("#hide").show();
       $("#labelDoc").html("CPF");
       $("#clientDocument").attr("placeholder","CPF..");
+      $("#clientDocument").attr("name","Cpf");
       $("#clientDocument").removeAttr("readonly");
     });
     $("#clientTipo2").on('click',function (){
           $("#hide").hide();
           $("#labelDoc").html("CNPJ");
            $("#clientDocument").attr("placeholder","CNPJ..");
+           $("#clientDocument").attr("name","Cnpj");
           $("#clientDocument").removeAttr("readonly");
     });
     

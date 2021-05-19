@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Transactions;
 
 namespace BUFFET.Models.Buffet.Cliente
 {
     public class ClienteEntityF: ClienteEntity
     {
         
-        public ClienteEntityF()
+        public ClienteEntityF():base()
         {
+            
             this.Tipo = new ClienteType(EClienteDescricao.FISICA);
-            this.Id = new Guid();
+            this.DataIn = DateTime.Now;
         }
 
         public string CPF { get; set; }

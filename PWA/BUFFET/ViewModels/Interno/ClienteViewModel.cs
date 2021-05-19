@@ -7,6 +7,8 @@ namespace BUFFET.ViewModels.Interno
     {
         public ICollection<Cliente> Clientes { get; set; }
 
+        public string MensagemErro { get; set; }
+        public string MensagemSucesso { get; set; }
         public ClienteViewModel()
         {
             Clientes = new List<Cliente>();
