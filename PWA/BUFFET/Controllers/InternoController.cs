@@ -38,6 +38,7 @@ using BUFFET.ViewModels.Interno;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using UsuarioHoraAcessoEntity = BUFFET.Models.Buffet.Access.UsuarioHoraAcessoEntity;
 
 namespace BUFFET.Controllers
 {
@@ -49,13 +50,15 @@ namespace BUFFET.Controllers
 
         private readonly ClienteService _clienteService;
         private readonly UsuarioService _usuarioService;
+        private readonly UsuarioHoraAcessoService _usuarioHoraAcessoService;
 
         public InternoController(EventoLocalService eventoLocalService, ClienteService clienteService
-        ,UsuarioService usuarioService)
+        ,UsuarioService usuarioService, UsuarioHoraAcessoService usuarioHoraAcessoService)
         {
             _eventoLocalService = eventoLocalService;
             _clienteService = clienteService;
             _usuarioService = usuarioService;
+            _usuarioHoraAcessoService = usuarioHoraAcessoService;
         }
 
         
@@ -102,7 +105,23 @@ namespace BUFFET.Controllers
         }
         public IActionResult MinhaConta()
         {
-            return View();
+            var viewModel = new MinhaContaViewModel();
+
+            var listaAcessos = _usuarioHoraAcessoService.ListaTodos();
+
+            foreach (UsuarioHoraAcessoEntity userHoraAces in listaAcessos)
+            {
+                viewModel.UsuarioHoraAcessoEnt.Add(new UsuarioHoraAcessoEnt()
+                {
+                    Id = userHoraAces.Id.ToString(),
+                    DataAcesso = userHoraAces.DataAcesso.ToShortDateString(),
+                    Usuario = userHoraAces.Usuario
+                });
+
+            }
+            return View(viewModel);
+            
+            
         }
         
         //listar::cliente
@@ -224,7 +243,7 @@ namespace BUFFET.Controllers
             {
                 viewModel.Local.Add(new Local()
                 {
-                    Id = eventoLocal.Descricao.ToString(),
+                    Id = eventoLocal.Id.ToString(),
                     Descricao = eventoLocal.Descricao.ToString(),
                     Endereco = eventoLocal.Endereco.ToString()
                 });

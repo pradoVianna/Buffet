@@ -30,6 +30,7 @@ namespace BUFFET.Controllers
         {  
             var userName = request.UserName;
             var senha = request.Password;
+            var userHoraLog = new UsuarioHoraAcessoEntity();
             
             if (userName == null)
             {

@@ -1,4 +1,6 @@
 ﻿@using System.Security.Policy
+@using BUFFET.ViewModels.Internal
+@model BUFFET.ViewModels.Internal.MinhaContaViewModel;
 @{
     ViewData["Title"] = "Minha Conta";
 }
@@ -30,24 +32,36 @@
     </div>
   </div>
     <div class="card" style="width: 18rem;">
-      <diav class="card-body">
+      <div class="card-body">
         <h5 class="card-title">CONTROLE2</h5>
         <div class="input-group mb-3">
-          <p>CONTROLE2</p>
-          <p>CONTROLE2</p>
-          <p>CONTROLE2</p>
-          <p>CONTROLE2</p>
-           <p>CONTROLE2</p>
-                    <p>CONTROLE2</p>
-                    <p>CONTROLE2</p>
-          <p>CONTROLE2</p>
-           <p>CONTROLE2</p>
-                    <p>CONTROLE2</p>
-                    <p>CONTROLE2</p>
-                    <p>CONTROLE2</p>
+           <table class="table table-striped">
+                  <thead>
+                  <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Data Acesso</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  
+                  @foreach (UsuarioHoraAcessoEnt local in @Model.UsuarioHoraAcessoEnt)
+                  {
+                      <tr>
+                          <td >@local.Id</td>
+                          <td >@local.Usuario.Id</td>
+                           <td >@local.DataAcesso</td>
+                      </tr>
+                      
+                  }
+          
+                
+          
+                  </tbody>
+              </table>
         </div>
         
-      </diav>
+      </div>
   
     </div>
     </div>

@@ -22,7 +22,8 @@ namespace BUFFET.Data
         public DbSet<EventoLocal> EventoLocal { get; set; }
         public DbSet<EventoService> EventoService { get; set; }
         public DbSet<EventoSituation> EventoSituation { get; set; }
-        public DbSet<EventoType> EventoType { get; set; }
+        public DbSet<UsuarioHoraAcessoEntity> UsuarioHoraAcesso { get; set; }
+        
         
         
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)

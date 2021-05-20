@@ -52,6 +52,7 @@ namespace BUFFET
             services.AddTransient<ConvidadoService>();
             services.AddTransient<EventoService>();
             services.AddTransient<EventoLocalService>();
+            services.AddTransient<UsuarioHoraAcessoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
