@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 
 using System;
-=======
-<<<<<<< HEAD
+
 
 using System;
 using System.Collections.Generic;
@@ -12,10 +10,9 @@ using BUFFET.ViewModels.Internal;
 
 using BUFFET.Models.Buffet.Cliente;
 using BUFFET.RequestModels;
-=======
-<<<<<<< HEAD
-﻿using System;
->>>>>>> origin/master
+
+using System;
+
 using System.Collections.Generic;
 using System.Runtime.Intrinsics.Arm;
 using BUFFET.Models.Buffet.Cliente;
@@ -26,21 +23,19 @@ using System.Reflection.Metadata;
 using BUFFET.Models.Buffet.Access;
 using BUFFET.Models.Buffet.Evento;
 using BUFFET.ViewModels.Internal;
-<<<<<<< HEAD
+
 
 using BUFFET.Models.Buffet.Cliente;
 
 using BUFFET.ViewModels.Interno;
 
 using Microsoft.AspNetCore.Authorization;
-=======
-=======
-﻿using BUFFET.Models.Buffet.Cliente;
->>>>>>> origin/master
->>>>>>> 89fae80dd72e119eb670373354de443b9ae5a3ed
+
+using BUFFET.Models.Buffet.Cliente;
+
 using BUFFET.ViewModels.Interno;
  using Microsoft.AspNetCore.Authorization;
->>>>>>> origin/master
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -51,7 +46,7 @@ namespace BUFFET.Controllers
     {
 
         private readonly EventoLocalService _eventoLocalService;
-<<<<<<< HEAD
+
         private readonly ClienteService _clienteService;
         private readonly UsuarioService _usuarioService;
 
@@ -62,21 +57,14 @@ namespace BUFFET.Controllers
             _clienteService = clienteService;
             _usuarioService = usuarioService;
         }
-=======
-        
-        private readonly ClienteService _clienteService;
 
-        public InternoController(EventoLocalService eventoLocalService,ClienteService clienteService)
-        {
-            _eventoLocalService = eventoLocalService;
-            _clienteService = clienteService;
-        }
+        
 
 
 
         // GET
        
->>>>>>> origin/master
+
 
 
      

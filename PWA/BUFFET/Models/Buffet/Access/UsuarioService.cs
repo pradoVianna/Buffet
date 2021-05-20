@@ -37,7 +37,7 @@ namespace BUFFET.Models.Buffet.Access
         {
             var user = await _userManager.FindByNameAsync(name);
             var userEdit = Validador(user, dadosBasicosUser);
-            var resultado = await _userManager.UpdateAsync(userEdit);
+            var resultado = await _userManager.UpdateAsync(await userEdit);
             if (resultado.Succeeded)
             {
                 throw new Exception("Usuario atualizado com sucesso!");
@@ -45,7 +45,7 @@ namespace BUFFET.Models.Buffet.Access
 
         }
 
-        public Usuario Validador(Usuario uExists,IDadosBasicosUser dados)
+        public async Task<Usuario> Validador(Usuario uExists,IDadosBasicosUser dados)
         {
             var u = uExists;
             if (dados.Username == null)
@@ -61,7 +61,7 @@ namespace BUFFET.Models.Buffet.Access
             }
             else
             {
-                var result =  _userManager.ChangePasswordAsync(u, dados.AtualSenha, dados.ConfirmSenha);
+                var result =await  _userManager.ChangePasswordAsync(u, dados.AtualSenha, dados.ConfirmSenha);
             }
 
             return u;
