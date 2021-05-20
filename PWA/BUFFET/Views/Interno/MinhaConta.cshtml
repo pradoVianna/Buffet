@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Security.Policy
+@{
     ViewData["Title"] = "Minha Conta";
 }
 <div class="text-center">
@@ -10,14 +11,20 @@
     <div class="card-body">
       <h5 class="card-title">Dados Pessoais:</h5>
       <div class="input-group mb-3">
-        <form>
-          <label for="nome" class="input-group-text" id="inputGroup-sizing-default">Nome</label>
-          <input id="nome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          <br><label for="email" class="input-group-text" id="inputGroup-sizing-default">Email</label>
-          <input id="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          <br><label for="ocup" class="input-group-text" id="inputGroup-sizing-default">Ocupação</label>
-          <input id="ocup" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          <br><input type="submit" class="btn btn-primary" value="Alterar informações">
+        <form asp-controller="Interno" asp-action="EditarUser" method="post">
+          <label for="Username" class="input-group-text" id="inputGroup-sizing-default">Nome de usuário</label>
+          <input id="Username" name="Username" type="text" class="form-control" aria-label="Sizing example input" value="@User.Identity.Name" aria-describedby="inputGroup-sizing-default">
+          <br>
+          <label for="email" class="input-group-text" id="inputGroup-sizing-default">Email</label>
+                    <input id="email" type="text" class="form-control" aria-label="Sizing example input" value="" aria-describedby="inputGroup-sizing-default">
+                    <br><label for="AtualSenha" class="input-group-text" id="inputGroup-sizing-default">Senha Atual</label>
+          <input id="AtualSenha" name="AtualSenha" type="text" class="form-control"  aria-label="Sizing example input" value="" aria-describedby="inputGroup-sizing-default">
+          <br><label for="Senha" class="input-group-text" id="inputGroup-sizing-default">Nova Senha</label>
+          <input id="Senha" name="Senha" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <br>
+          <label for="ConfirmSenha" class="input-group-text" id="inputGroup-sizing-default">Confirmar Nova Senha</label>
+                    <input id="ConfirmSenha" name="ConfirmSenha" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <br><input type="submit" class="btn btn-primary" value="Alterar informações">
         </form>
       </div>
     </div>

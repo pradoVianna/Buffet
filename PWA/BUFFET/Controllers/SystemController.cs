@@ -44,7 +44,7 @@ namespace BUFFET.Controllers
             try
             {
                 await _usuarioService.AuthUser(userName, senha);
-                
+                //var userLogado = _usuarioService.GetUser();
                 return Redirect("/Interno/Index");
             }
             catch (Exception ex)

@@ -1,19 +1,20 @@
-<<<<<<< HEAD
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Runtime.Intrinsics.Arm;
 using BUFFET.Models.Buffet.Cliente;
 using BUFFET.RequestModels;
-=======
-<<<<<<< HEAD
-﻿using System.Reflection.Metadata;
+
+
+using System.Reflection.Metadata;
+using BUFFET.Models.Buffet.Access;
 using BUFFET.Models.Buffet.Evento;
 using BUFFET.ViewModels.Internal;
-=======
-﻿using BUFFET.Models.Buffet.Cliente;
->>>>>>> origin/master
+
+using BUFFET.Models.Buffet.Cliente;
+
 using BUFFET.ViewModels.Interno;
->>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,22 +23,22 @@ namespace BUFFET.Controllers
     [Authorize]
     public class InternoController : Controller
     {
-<<<<<<< HEAD
-        private readonly EventoLocalService _eventoLocalService;
 
-        public InternoController(EventoLocalService eventoLocalService)
+        private readonly EventoLocalService _eventoLocalService;
+        private readonly ClienteService _clienteService;
+        private readonly UsuarioService _usuarioService;
+
+        public InternoController(EventoLocalService eventoLocalService, ClienteService clienteService
+        ,UsuarioService usuarioService)
         {
             _eventoLocalService = eventoLocalService;
+            _clienteService = clienteService;
+            _usuarioService = usuarioService;
         }
 
-=======
-        private readonly ClienteService _clienteService;
->>>>>>> ce441bf22b8beddab8d5f6617b999645dfcad7c6
-        // GET
-        public InternoController(ClienteService clienteService)
-        {
-            _clienteService = clienteService;
-        }
+
+     
+        
 
         public IActionResult Index()
         {
@@ -202,6 +203,13 @@ namespace BUFFET.Controllers
             return View();
         }
         
+        [HttpPost]
+        public RedirectToActionResult EditarUser(EditarUserRequestModel requestModel)
+        {
+            
+            _usuarioService.Editar(User.Identity.Name,requestModel);
+            return RedirectToAction("MinhaConta");
+        }
         
     }
 }
